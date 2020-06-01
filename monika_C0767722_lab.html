@@ -37,7 +37,7 @@
 		 for(var c=0;c<parseInt(col);c++)
 			{
 			 var y=  x.insertCell(c);
-			 y.innerHTML="row"+r+", col "+c;
+			 y.innerHTML="row"+r+", col"+c;
 			}
 		 }
 		 var container = document.getElementById("container");
@@ -49,7 +49,8 @@
      	var tbl = table,i;
         var row = tbl.insertRow(tbl.rows.length); 
     	 for (i = 0; i < tbl.rows[0].cells.length; i++) {
-         createCell(row.insertCell(i),"row"+i);
+			 var c=tbl.rows.length-1;
+         createCell(row.insertCell(i),"row"+c+", col"+i);
     	 }
 		 }
 
@@ -58,7 +59,8 @@
   		  var tbl = table;
        	  var  i;
    		 for (i = 0; i < tbl.rows.length; i++) {
-        	createCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length),"col"+i);
+			var c= tbl.rows[i].cells.length;
+        	createCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length),"row"+i+", col"+c);
 		    }
 		}
 
